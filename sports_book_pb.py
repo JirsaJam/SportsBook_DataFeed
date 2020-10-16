@@ -5,12 +5,12 @@ Created on Mon Sep 21 10:24:46 2020
 
 @author: jamesjirsa
 """
+#need to add database feed
 
 import pandas as pd
 import requests
 import json
 import datetime
-import SQL
 import numpy as np
 import time
 
@@ -81,7 +81,7 @@ def points_bet(sleep = 1):
     ipad = SQL.ipad()
     #sb = SQL.r_sql(ip = ipad, database = 'SportsBet', table = 'NFL_Lines')
     #df = df.compare(sb)
-    SQL.w_sql(df,ip = ipad, server = 'SportsBet', database = 'NFL_Lines')
+    # add datafeed here
     print('PointsBet Finished')
     time.sleep(sleep)
 
