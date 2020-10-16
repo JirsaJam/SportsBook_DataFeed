@@ -6,12 +6,12 @@ Created on Fri Oct  9 15:44:49 2020
 @author: jamesjirsa
 """
 
+#need to add database feed
 
 import pandas as pd
 import requests
 import json
 import datetime
-import SQL
 import numpy as np
 import time
 
@@ -133,9 +133,7 @@ def bet_rivers(sleep = 1):
     df['DateTime'] = datetime.datetime.now()
     df = df[['game_id' ,'name', 'homeTeamName', 'awayTeamName','startDate', 'bet_id', 'type',
             'id', 'label', 'line', 'oddsDecimal', 'Book', 'DateTime']]
-    ipad = SQL.ipad()
-    # sb = SQL.r_sql(ip = ipad, database = 'SportsBet', table = 'NFL_Lines')
-    # df = df.compare(sb)
-    SQL.w_sql(df,ip = ipad, server = 'SportsBet', database = 'NFL_Lines')
+
+    #Add database feed here
     print('BetRivers Finished')
     time.sleep(sleep)
